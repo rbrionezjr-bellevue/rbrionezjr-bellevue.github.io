@@ -105,17 +105,17 @@
     .then(repos => {
       const container = document.getElementById('repo-container');
       repos
-  .filter(repo => repo.name !== 'rbrionezjr-bellevue.github.io')
-  .forEach(repo => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <h3>${repo.name}</h3>
-          <p>${repo.description || 'No description provided.'}</p>
-          <a href="${repo.html_url}" target="_blank">View Repo</a>
-        `;
-        container.appendChild(card);
-      });
+        .filter(repo => repo.name !== 'rbrionezjr-bellevue.github.io')  // ✨ Exclude this repo
+        .forEach(repo => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description || 'No description provided.'}</p>
+            <a href="${repo.html_url}" target="_blank">View Repo</a>
+          `;
+          container.appendChild(card);
+        });
     });
 </script>
 
